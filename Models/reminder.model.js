@@ -10,20 +10,20 @@ const reminderSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-   date: {
+  date: {
     type: String, // Format: "YYYY-MM-DD"
     required: true,
-    match: /^\d{4}-\d{2}-\d{2}$/ // basic format validation
+    match: /^\d{4}-\d{2}-\d{2}$/, // basic format validation
   },
   time: {
     type: String, // Format: "HH:MM"
     required: true,
-    match: /^([01]\d|2[0-3]):([0-5]\d)$/ // 24-hour time format validation
+    match: /^([01]\d|2[0-3]):([0-5]\d)$/, // 24-hour time format validation
   },
   remindBY: {
     type: String,
-    enum:["SMS","email"],
-    default:"email",
+    enum: ["SMS", "email"],
+    default: "email",
     required: true,
   },
   userID: {

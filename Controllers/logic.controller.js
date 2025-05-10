@@ -3,7 +3,7 @@ import userModel from "../Models/user.Model.js";
 import transporter from "../Config/nodemailer.js";
 
 export const set = async (req, res) => {
-  const { title, data, time ,remindBY, date} = req.body;
+  const { title, data, time, remindBY, date } = req.body;
 
   if (!title || !data || !time || !remindBY || !date) {
     return res.json({
@@ -22,8 +22,8 @@ export const set = async (req, res) => {
       title: title,
       data: data,
       time: time,
-      date:date,
-      remindBY:remindBY,
+      date: date,
+      remindBY: remindBY,
       userID: req.body.userID,
     });
 
