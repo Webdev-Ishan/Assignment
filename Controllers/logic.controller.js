@@ -3,9 +3,9 @@ import userModel from "../Models/user.Model.js";
 import transporter from "../Config/nodemailer.js";
 
 export const set = async (req, res) => {
-  const { title, data, time } = req.body;
+  const { title, data, time ,remindBY, date} = req.body;
 
-  if (!title || !data || !time) {
+  if (!title || !data || !time || !remindBY || !date) {
     return res.json({
       success: false,
       message: "Fill all the credentials please!",
@@ -22,6 +22,8 @@ export const set = async (req, res) => {
       title: title,
       data: data,
       time: time,
+      date:date,
+      remindBY:remindBY,
       userID: req.body.userID,
     });
 
